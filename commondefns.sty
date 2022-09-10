@@ -38,16 +38,20 @@
     \newcommand{\N}{\ensuremath{\mathbb{N}}\xspace}
     \newcommand{\Z}{\ensuremath{\mathbb{Z}}\xspace}
     \newcommand{\Q}{\ensuremath{\mathbb{Q}}\xspace}
+    \newcommand{\xor}{\ensuremath{\oplus}\xspace}
+    \newcommand{\impl}{\ensuremath{\rightarrow}\xspace}
+    \newcommand{\restr}[2]{\ensuremath{\left.#1\right|_{#2}}}
+    \newcommand{\expans}[2]{\ensuremath{\left.#1\right|^{#2}}}
 }{}
 
 % logic symbols
 \ifdefvoid{\logic}{}{
     \newcommand{\A}{\ensuremath{\mathfrak A}\xspace}
-    \newcommand{\B}{\ensuremath{\mathfrak B}}
-    \newcommand{\I}{\ensuremath{\mathfrak I}}
-    \newcommand{\Th}{\ensuremath{\mathsf{Th}}}
-    \newcommand{\FO}{\ensuremath{\mathsf{FO}}}
-    \newcommand{\Mod}{\ensuremath{\mathsf{Mod}}}
+    \newcommand{\B}{\ensuremath{\mathfrak B}\xspace}
+    \newcommand{\I}{\ensuremath{\mathfrak I}\xspace}
+    \newcommand{\Th}{\ensuremath{\mathsf{Th}}\xspace}
+    \newcommand{\FO}{\ensuremath{\mathsf{FO}}\xspace}
+    \newcommand{\Mod}{\ensuremath{\mathsf{Mod}}\xspace}
 }
 
 
@@ -65,8 +69,6 @@
 \tikzset{every node/.style={circle, fill=black, inner sep=2pt}}
 
 %macros
-\newcommand{\xor}{\ensuremath{\oplus}}
-\newcommand{\impl}{\ensuremath{\rightarrow}}
 \newcommand{\TM}{\ensuremath{\mathrm{TM}}\xspace}
 \newcommand{\DTM}{\ensuremath{\mathrm{DTM}}\xspace}
 \newcommand{\NTM}{\ensuremath{\mathrm{NTM}}\xspace}
@@ -77,8 +79,6 @@
 \newcommand{\cPSPACE}{\ensuremath{\mathsf{PSPACE}}\xspace}
 \newcommand{\cPP}{\ensuremath{\mathsf{PP}}\xspace}
 \newcommand{\cP}{\ensuremath{\mathsf{P}}\xspace}
-\newcommand{\restr}[2]{\ensuremath{\left.#1\right|_{#2}}}
-\newcommand{\expans}[2]{\ensuremath{\left.#1\right|^{#2}}}
 
 % potentially annoying
 \let\ophi\phi
