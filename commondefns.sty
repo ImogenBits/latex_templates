@@ -11,8 +11,7 @@
 \newcommand{\optionimpliesnot}[2]{
     \DeclareOptionX{#1}{
         \expandafter\providecommand\csname #1\endcsname{True}
-        \expandafter\providecommand\csname #2\endcsname{}
-        \expandafter\renewcommand\csname #2\endcsname{}
+        \expandafter\def\csname #2\endcsname{}
     }
 }
 
@@ -23,6 +22,7 @@
 \option{complexity}
 \option{graphs}
 \ProcessOptionsX
+\let\option\undefined
 
 
 % general text layout improvements
@@ -33,6 +33,7 @@
     \RequirePackage{parskip, microtype}         % general layout and rendering
     \RequirePackage{graphicx}                   % actually usable graphics
     \RequirePackage{pdfpages}                   % include pdfs
+    \RequirePackage{adjustbox}                  % control box placement
 }{}
 
 % math symbols
@@ -100,21 +101,3 @@
     \tikzset{outline/.append style={circle, inner sep=2pt, minimum size=8pt, draw}}
     \tikzset{snake/.style={decorate, decoration=snake}}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\RequirePackage{adjustbox}
-
-
-
