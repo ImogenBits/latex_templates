@@ -1,6 +1,3 @@
-\NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{packages}[2022/09/10 Commonly used packages]
-
 % language
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
@@ -10,6 +7,7 @@
 % Layout
 \usepackage{parskip}
 \usepackage{xspace}
+\usepackage[external]{adjustbox}
 
 % Mathesymbole und Ähnliches
 \usepackage{amsmath}
@@ -22,12 +20,9 @@
 \usepackage{graphicx}
 \usepackage{pdfpages}
 \usepackage{tikz}
-\usetikzlibrary{calc, tikzmark}
-\usetikzlibrary{positioning}
-\usetikzlibrary{arrows, arrows.meta}
-\usetikzlibrary{decorations.markings}
+\usetikzlibrary{calc, tikzmark, backgrounds, positioning, arrows, arrows.meta, decorations.markings, scopes}
 
 % better tikz graphs
 \tikzset{every picture/.style={thick, >={Latex[round, length=2.5mm, width=2.5mm]}}}
-\tikzset{every path/.style={shorten <= 2pt, shorten >= 2pt}}
-\tikzset{every node/.style={circle, fill=blue, inner sep=2pt}}
+%\tikzset{every path/.style={shorten <= 1pt, shorten >= 1pt}}
+\tikzset{every node/.style={circle, fill=black, inner sep=2pt}}
