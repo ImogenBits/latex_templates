@@ -1,14 +1,24 @@
-\documentclass{assignment}
-\course{Wah Bleps}
-\group{123}
-\sheet{1}
-\member{Imogen Lastname}{123456}
-\member{Puppy}{113581}
-%\member{Catte}{330033}
-%\member{Frog}{987456}
+\documentclass[group=123, sheet=1]{assignment}
+\course{Boring Math}
+% the course, group, and sheet can all be specified via either documentclass options or their slash commands
+% when using the documentclass options, latex strips all spaces so sometimes using the commands is the only good way
+% e.g. the above invokation is equivalent to:
+% \documentclass{assignment}
+% \group{123}
+% \sheet{1}
+% \course{Boring Math}
+%
+% but this will lead to the course being displayed as "BoringMath":
+% \documentclass[group=123, sheet=1, course=Boring Math]{assignment}
+%
+% you can also specify the language=german or language=english option (defaults to english)
+
+% group members are added via the \member{full name}{matriculation number} command
+\member{Ada Lovelace}{486921}
+\member{Emmy Noether}{077734}
+\member{Margaret Hamilton}{160769}
 
 
 \begin{document}
-    This is my Assignment!
-    
+    This is our Assignment!
 \end{document}
