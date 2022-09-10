@@ -62,13 +62,16 @@
     \expandafter\renewcommand\expandafter\pdfmembers\expandafter{\pdfmembers#1, #2; }
 }
 
+\newcounter{lastyear}
+\setcounter{lastyear}{\numexpr \year - 1 \relax}
+
 \renewcommand{\maketitle}{
     {\centering
     {\raggedright
     \begin{tabular}{l}
         \ifdefvoid{\printcourse}{}{
         \printcourse \\
-        \ifnum \month<4 WS \else \ifnum \month>9 WS \else SS \fi \fi \the\year \\}
+        \ifnum \month<4 WS \arabic{lastyear} \else \ifnum \month>9 WS \else SS \fi \the\year \fi \\}
         \ifdefvoid{\printgroup}{}{\wordGroup{} \printgroup \\}
     \end{tabular}}
     %
