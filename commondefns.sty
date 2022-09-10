@@ -2,27 +2,27 @@
 \ProvidesPackage{commondefns}[2022/09/10 Commonly used packages and macros]
 
 % language
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage[utf8]{inputenc}
-\usepackage[ngerman, english]{babel}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{lmodern}
+\RequirePackage[ngerman, english]{babel}
 
 % Layout
-\usepackage{parskip}
-\usepackage{xspace}
-\usepackage[external]{adjustbox}
+\RequirePackage{parskip}
+\RequirePackage{xspace}
+\xspaceaddexceptions{]\}}
+\RequirePackage{adjustbox}
 
 % Mathesymbole und Ähnliches
-\usepackage{amsmath}
-\usepackage{mathtools}
-\usepackage{amssymb}
-\usepackage{microtype}
-\usepackage{stmaryrd}
+\RequirePackage{amsmath}
+\RequirePackage{mathtools}
+\RequirePackage{amssymb}
+\RequirePackage{microtype}
+\RequirePackage{stmaryrd}
 
 % common pdf and graphics tools
-\usepackage{graphicx}
-\usepackage{pdfpages}
-\usepackage{tikz}
+\RequirePackage{graphicx}
+\RequirePackage{pdfpages}
+\RequirePackage{tikz}
 \usetikzlibrary{calc, tikzmark, backgrounds, positioning, arrows, arrows.meta, decorations.markings, scopes}
 
 % better tikz graphs
