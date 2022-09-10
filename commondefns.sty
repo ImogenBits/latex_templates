@@ -1,24 +1,39 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{commondefns}[2022/09/10 Commonly used packages and macros]
-
-% language
-\RequirePackage[T1]{fontenc}
-\RequirePackage{lmodern}
-\RequirePackage[ngerman, english]{babel}
-
-% Layout
-\RequirePackage{parskip}
-\RequirePackage{xspace}
+\RequirePackage{xkeyval, etoolbox, xspace}
 \xspaceaddexceptions{]\}}
+
+
+\DeclareOptionX{notext}{
+    \providecommand{\notext}{True}
+}
+\DeclareOptionX{nomath}{
+    \providecommand{\nomath}{True}
+}
+\ProcessOptionsX
+
+
+% general text layout improvements
+\ifdefvoid{\notext}{
+    \RequirePackage[T1]{fontenc}                % better font encoding
+    \RequirePackage{lmodern}                    % font with better glyphs
+    \RequirePackage[ngerman, english]{babel}    % better hypenations
+    \RequirePackage{parskip, microtype}         % general layout and rendering
+}{}
+
+% math symbols
+\ifdefvoid{\nomath}{
+    \RequirePackage{amsmath, amssymb, mathtools, stmaryrd}
+    \newcommand{\mathsc}[1]{\text{\textsc{#1}}}
+    \newcommand{\R}{\ensuremath{\mathbb{R}}\xspace}
+    \newcommand{\N}{\ensuremath{\mathbb{N}}\xspace}
+    \newcommand{\Z}{\ensuremath{\mathbb{Z}}\xspace}
+    \newcommand{\Q}{\ensuremath{\mathbb{Q}}\xspace}
+}{}
+        
+        
 \RequirePackage{adjustbox}
-
-% Mathesymbole und Ähnliches
-\RequirePackage{amsmath}
-\RequirePackage{mathtools}
-\RequirePackage{amssymb}
-\RequirePackage{microtype}
-\RequirePackage{stmaryrd}
-
+        
 % common pdf and graphics tools
 \RequirePackage{graphicx}
 \RequirePackage{pdfpages}
@@ -31,11 +46,6 @@
 \tikzset{every node/.style={circle, fill=black, inner sep=2pt}}
 
 %macros
-\newcommand{\mathsc}[1]{\text{\textsc{#1}}}
-\newcommand{\R}{\ensuremath{\mathbb{R}}}
-\newcommand{\N}{\ensuremath{\mathbb{N}}}
-\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
-\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
 \newcommand{\A}{\ensuremath{\mathfrak A}}
 \newcommand{\B}{\ensuremath{\mathfrak B}}
 \newcommand{\I}{\ensuremath{\mathfrak I}}
@@ -69,3 +79,5 @@
 \renewcommand{\L}{\ensuremath{L}\xspace}
 \renewcommand{\O}{\ensuremath{\mathcal{O}}}
 \renewcommand{\o}{\ensuremath{\mathcal{o}}}
+
+
