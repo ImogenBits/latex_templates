@@ -20,6 +20,7 @@
 \option{nomath}
 \optionimpliesnot{logic}{nomath}
 \option{complexity}
+\option{graphs}
 \ProcessOptionsX
 
 
@@ -29,6 +30,8 @@
     \RequirePackage{lmodern}                    % font with better glyphs
     \RequirePackage[ngerman, english]{babel}    % better hypenations
     \RequirePackage{parskip, microtype}         % general layout and rendering
+    \RequirePackage{graphicx}                   % actually usable graphics
+    \RequirePackage{pdfpages}                   % include pdfs
 }{}
 
 % math symbols
@@ -74,21 +77,31 @@
     \newcommand{\cPP}{\ensuremath{\mathsf{PP}}\xspace}
 }
 
+% graphs
+\ifdefvoid{\graphs}{}{
+    \RequirePackage{tikz}
+    \usetikzlibrary{calc, tikzmark, backgrounds, scopes, positioning, arrows.meta,
+                    decorations.markings, decorations.pathmorphing}
+    \tikzset{every picture/.style={thick, >={Stealth[round, length=2.5mm, width=2.5mm]}}}
+    \tikzset{dot/.style={circle, fill, inner sep=2pt}}
+    \tikzset{letters/.style={fill=none, inner sep=.5pt}}
+    \tikzset{outline/.append style={circle, inner sep=2pt, minimum size=8pt, draw}}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \RequirePackage{adjustbox}
-        
-% common pdf and graphics tools
-\RequirePackage{graphicx}
-\RequirePackage{pdfpages}
-\RequirePackage{tikz}
-\usetikzlibrary{calc, tikzmark, backgrounds, positioning, arrows, arrows.meta, decorations.markings, scopes}
-
-% better tikz graphs
-\tikzset{every picture/.style={thick, >={Latex[round, length=2.5mm, width=2.5mm]}}}
-%\tikzset{every path/.style={shorten <= 1pt, shorten >= 1pt}}
-\tikzset{every node/.style={circle, fill=black, inner sep=2pt}}
-
-%macros
 
 % potentially annoying
 \let\ophi\phi
