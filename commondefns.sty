@@ -3,13 +3,20 @@
 \RequirePackage{xkeyval, etoolbox, xspace}
 \xspaceaddexceptions{]\}}
 
+\newcommand{\option}[1]{
+    \DeclareOptionX{#1}{
+        \expandafter\providecommand\csname #1\endcsname[1]{True}
+    }
+}
+\newcommand{\optionimplies}[3][True]{
+    \DeclareOptionX{#2}{
+        \expandafter\providecommand\csname #2\endcsname[1]{True}
+        \expandafter\providecommand\csname #3\endcsname[1]{#1}
+    }
+}
 
-\DeclareOptionX{notext}{
-    \providecommand{\notext}{True}
-}
-\DeclareOptionX{nomath}{
-    \providecommand{\nomath}{True}
-}
+\option{notext}
+\option{nomath}
 \ProcessOptionsX
 
 
