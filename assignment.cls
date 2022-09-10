@@ -48,7 +48,7 @@
         \begin{Form}
         \wordTotalPoints: \TextField[name=points, width=20mm, align=1, bordercolor={0 0 0}]{}
         \end{Form}
-        \vspace{\baselineskip}
+        \vspace{\baselineskip} \\
     }
 }
 
@@ -62,16 +62,8 @@
     \expandafter\renewcommand\expandafter\pdfmembers\expandafter{\pdfmembers#1, #2; }
 }
 
-
-\AtBeginDocument{
-    \hypersetup{
-        pdftitle = {\printcourse{} \wordAssignment{} \printsheet},
-        pdfauthor = {\wordGroup{} \printgroup: \pdfmembers},
-        pdfsubject = {\printcourse}
-    }
-    
-    \printpointsline{}
-
+\renewcommand{\maketitle}{
+    {\centering
     {\raggedright
     \begin{tabular}{l}
         \ifdefvoid{\printcourse}{}{
@@ -79,15 +71,29 @@
         \ifnum \month<4 WS \else \ifnum \month>9 WS \else SS \fi \fi \the\year \\}
         \ifdefvoid{\printgroup}{}{\wordGroup{} \printgroup \\}
     \end{tabular}}
+    %
     \ifdefvoid{\printcourse}{\ifdefvoid{\printgroup}{}{\hfill}}{\hfill}
     {\Large \wordAssignment{} \printsheet}
-    \hfill
-    \begin{tabular}{l l}
-        \fmtmembers
-    \end{tabular}
-    
+    %
+    \ifdefvoid{\fmtmembers}{}{
+        \hfill
+        \begin{tabular}{l l}
+            \fmtmembers
+        \end{tabular}
+    }}
+
     \hrule
     \vspace{\baselineskip}
+}
+
+\AtBeginDocument{
+    \hypersetup{
+        pdftitle = {\printcourse{} \wordAssignment{} \printsheet},
+        pdfauthor = {\wordGroup{} \printgroup: \pdfmembers},
+        pdfsubject = {\printcourse}
+    }
+    \printpointsline
+    \maketitle    
 }
 
 
