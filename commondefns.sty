@@ -19,6 +19,7 @@
 \option{notext}
 \option{nomath}
 \optionimpliesnot{logic}{nomath}
+\option{complexity}
 \ProcessOptionsX
 
 
@@ -54,6 +55,25 @@
     \newcommand{\Mod}{\ensuremath{\mathsf{Mod}}\xspace}
 }
 
+% complexity classes
+\ifdefvoid{\complexity}{}{
+    \newcommand{\TM}{\ensuremath{\mathrm{TM}}\xspace}
+    \newcommand{\DTM}{\ensuremath{\mathrm{DTM}}\xspace}
+    \newcommand{\NTM}{\ensuremath{\mathrm{NTM}}\xspace}
+    \newcommand{\PTM}{\ensuremath{\mathrm{PTM}}\xspace}
+    \newcommand{\ATM}{\ensuremath{\mathrm{ATM}}\xspace}
+    \newcommand{\cTIME}{\ensuremath{\mathsf{TIME}}\xspace}
+    \newcommand{\cSPACE}{\ensuremath{\mathsf{SPACE}}\xspace}
+    \newcommand{\cNTIME}{\ensuremath{\mathsf{NTIME}}\xspace}
+    \newcommand{\cNSPACE}{\ensuremath{\mathsf{NSPACE}}\xspace}
+    \newcommand{\cP}{\ensuremath{\mathsf{P}}\xspace}
+    \newcommand{\cNP}{\ensuremath{\mathsf{NP}}\xspace}
+    \newcommand{\cEXP}{\ensuremath{\mathsf{EXP}}\xspace}
+    \newcommand{\cNEXP}{\ensuremath{\mathsf{NEXP}}\xspace}
+    \newcommand{\cPSPACE}{\ensuremath{\mathsf{PSPACE}}\xspace}
+    \newcommand{\cPP}{\ensuremath{\mathsf{PP}}\xspace}
+}
+
 
 \RequirePackage{adjustbox}
         
@@ -69,16 +89,6 @@
 \tikzset{every node/.style={circle, fill=black, inner sep=2pt}}
 
 %macros
-\newcommand{\TM}{\ensuremath{\mathrm{TM}}\xspace}
-\newcommand{\DTM}{\ensuremath{\mathrm{DTM}}\xspace}
-\newcommand{\NTM}{\ensuremath{\mathrm{NTM}}\xspace}
-\newcommand{\PTM}{\ensuremath{\mathrm{PTM}}\xspace}
-\newcommand{\cNP}{\ensuremath{\mathsf{NP}}\xspace}
-\newcommand{\cEXP}{\ensuremath{\mathsf{EXP}}\xspace}
-\newcommand{\cNEXP}{\ensuremath{\mathsf{NEXP}}\xspace}
-\newcommand{\cPSPACE}{\ensuremath{\mathsf{PSPACE}}\xspace}
-\newcommand{\cPP}{\ensuremath{\mathsf{PP}}\xspace}
-\newcommand{\cP}{\ensuremath{\mathsf{P}}\xspace}
 
 % potentially annoying
 \let\ophi\phi
