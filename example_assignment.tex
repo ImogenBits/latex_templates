@@ -20,6 +20,72 @@
 \member{Emmy Noether}{077734}
 \member{Margaret Hamilton}{160769}
 
+
+% the commondefns package includes package imports and macro definitions I often use.
+% by default it only does slight improvements to text layout and includes commonly used math libraries.
+% you can turn them off with 'notext' and/or 'nomath'. when using the math parts, it will change the definitions of
+% some commonly disliked variable letter renderings, if you want to keep the default ones you can pass 'keepvarletters'.
+% the option 'graphs' imports tikz, commonly used libraries, and defines generally useful styles.
+% 'logic', 'complexity' contain macros that are useful when working in the respective fields.
+\usepackage[logic, complexity, graphs]{commondefns}
+
 \begin{document}
-    This is our Assignment! $\phi, \theta, \epsilon$
+    This is our Assignment!
+
+    We can now use pretty versions of $\phi$ and $\epsilon$, the round verion of $\phi$ is also available $\ophi$.
+
+    Common logic symbols are easy to use:\\
+    If $\FO \supseteq \Phi \models \A$ for some infinite \A, then for every cardinal $\kappa \geq |\A|$ there exists a $\B \models \Phi$ with $|\B| \geq \kappa$.
+
+    And the same is true for complexity classes:\\
+    For any function $f(n) \in \Omega(\log n)$, $\cNSPACE(f(n)) = \cco\cNSPACE(f(n))$.
+
+    We can also make some graphs:\\
+    \begin{adjustbox}{margin=0 5, valign=m}
+        \begin{tikzpicture}[nodes=outline]
+           \node (1) at (0, 0) {a};
+           \node (2) at (1, 0) {b};
+           \node (3) at (1.5, -1) {c};
+           \node (4) at (2, -0.5) {d};
+           \node (5) at (0.5, -1) {e};
+           \draw (1) to (2);
+           \draw (2) to (3);
+           \draw (3) to (1);
+           \draw (3) to (4);
+           \draw (5) to (1);
+           \draw (5) to (3);
+        \end{tikzpicture}
+        \end{adjustbox}
+        $\cong$
+        \begin{adjustbox}{margin=0 5, valign=m}
+        \begin{tikzpicture}[nodes=letters, nodes=red]
+           \node (1) at (0, 0) {a};
+           \node (2) at (0.5, -0.65) {b};
+           \node (3) at (1.5, -1) {c};
+           \node (4) at (2, -0.5) {d};
+           \node (5) at (0, -1) {e};
+           \draw (1) to (2);
+           \draw (2) to (3);
+           \draw (3) to (1);
+           \draw (3) to (4);
+           \draw (5) to (1);
+           \draw (5) to (3);
+        \end{tikzpicture}
+        \end{adjustbox}
+        $\cong$
+        \begin{adjustbox}{margin=0 5, valign=m}
+        \begin{tikzpicture}[nodes=dot, nodes=blue]
+            \node (1) at (0, 0) {};
+            \node (2) at (0.5, -0.65) {};
+            \node (3) at (1.5, -1) {};
+            \node (4) at (-0.25, -1.5) {};
+            \node (5) at (0, -1) {};
+            \draw (1) to (2);
+            \draw (2) to (3);
+            \draw (3) to (1);
+            \draw (3) to (4);
+            \draw (5) to (1);
+            \draw (5) to (3);
+        \end{tikzpicture}
+        \end{adjustbox}
 \end{document}

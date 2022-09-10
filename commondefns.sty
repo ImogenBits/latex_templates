@@ -48,6 +48,7 @@
     \newcommand{\impl}{\ensuremath{\rightarrow}\xspace}
     \newcommand{\restr}[2]{\ensuremath{\left.#1\right|_{#2}}}
     \newcommand{\expans}[2]{\ensuremath{\left.#1\right|^{#2}}}
+    \newtheorem{theorem}{Theorem}
 
     \ifdefvoid{\keepvarletters}{
         \let\ophi\phi
@@ -75,6 +76,7 @@
     \newcommand{\NTM}{\ensuremath{\mathrm{NTM}}\xspace}
     \newcommand{\PTM}{\ensuremath{\mathrm{PTM}}\xspace}
     \newcommand{\ATM}{\ensuremath{\mathrm{ATM}}\xspace}
+    \newcommand{\cco}{\ensuremath{\mathsf{co-}}}
     \newcommand{\cTIME}{\ensuremath{\mathsf{TIME}}\xspace}
     \newcommand{\cSPACE}{\ensuremath{\mathsf{SPACE}}\xspace}
     \newcommand{\cNTIME}{\ensuremath{\mathsf{NTIME}}\xspace}
@@ -96,8 +98,9 @@
     \usetikzlibrary{calc, tikzmark, backgrounds, scopes, positioning, arrows.meta,
                     decorations.markings, decorations.pathmorphing, decorations.pathreplacing, decorations.shapes}
     \tikzset{every picture/.style={thick, >={Stealth[round, length=2.5mm, width=2.5mm]}}}
+    \tikzset{every node/.style={circle}}
     \tikzset{dot/.style={circle, fill, inner sep=2pt}}
     \tikzset{letters/.style={fill=none, inner sep=.5pt}}
-    \tikzset{outline/.append style={circle, inner sep=2pt, minimum size=8pt, draw}}
+    \tikzset{outline/.style={circle, inner sep=1.5pt, minimum size=12pt, draw}}
     \tikzset{snake/.style={decorate, decoration=snake}}
 }
