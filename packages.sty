@@ -1,3 +1,6 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{commondefns}[2022/09/10 Commonly used packages and macros]
+
 % language
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
@@ -26,3 +29,43 @@
 \tikzset{every picture/.style={thick, >={Latex[round, length=2.5mm, width=2.5mm]}}}
 %\tikzset{every path/.style={shorten <= 1pt, shorten >= 1pt}}
 \tikzset{every node/.style={circle, fill=black, inner sep=2pt}}
+
+%macros
+\newcommand{\mathsc}[1]{\text{\textsc{#1}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\A}{\ensuremath{\mathfrak A}}
+\newcommand{\B}{\ensuremath{\mathfrak B}}
+\newcommand{\I}{\ensuremath{\mathfrak I}}
+\newcommand{\Th}{\ensuremath{\mathsf{Th}}}
+\newcommand{\FO}{\ensuremath{\mathsf{FO}}}
+\newcommand{\Mod}{\ensuremath{\mathsf{Mod}}}
+\newcommand{\xor}{\ensuremath{\oplus}}
+\newcommand{\impl}{\ensuremath{\rightarrow}}
+\newcommand{\TM}{\ensuremath{\mathrm{TM}}\xspace}
+\newcommand{\DTM}{\ensuremath{\mathrm{DTM}}\xspace}
+\newcommand{\NTM}{\ensuremath{\mathrm{NTM}}\xspace}
+\newcommand{\PTM}{\ensuremath{\mathrm{PTM}}\xspace}
+\newcommand{\cNP}{\ensuremath{\mathsf{NP}}\xspace}
+\newcommand{\cEXP}{\ensuremath{\mathsf{EXP}}\xspace}
+\newcommand{\cNEXP}{\ensuremath{\mathsf{NEXP}}\xspace}
+\newcommand{\cPSPACE}{\ensuremath{\mathsf{PSPACE}}\xspace}
+\newcommand{\cPP}{\ensuremath{\mathsf{PP}}\xspace}
+\newcommand{\cP}{\ensuremath{\mathsf{P}}\xspace}
+\newcommand{\restr}[2]{\ensuremath{\left.#1\right|_{#2}}}
+\newcommand{\expans}[2]{\ensuremath{\left.#1\right|^{#2}}}
+
+% potentially annoying
+\let\ophi\phi
+\renewcommand{\phi}{\varphi}
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\P}{\ensuremath{\mathcal P}}
+\newcommand{\G}{\ensuremath{\mathcal G}}
+\newcommand{\K}{\ensuremath{\mathcal K}}
+\newcommand{\f}{\mathfrak}
+\renewcommand{\c}{\mathcal}
+\renewcommand{\L}{\ensuremath{L}\xspace}
+\renewcommand{\O}{\ensuremath{\mathcal{O}}}
+\renewcommand{\o}{\ensuremath{\mathcal{o}}}
