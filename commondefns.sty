@@ -81,11 +81,12 @@
 \ifdefvoid{\graphs}{}{
     \RequirePackage{tikz}
     \usetikzlibrary{calc, tikzmark, backgrounds, scopes, positioning, arrows.meta,
-                    decorations.markings, decorations.pathmorphing}
+                    decorations.markings, decorations.pathmorphing, decorations.pathreplacing, decorations.shapes}
     \tikzset{every picture/.style={thick, >={Stealth[round, length=2.5mm, width=2.5mm]}}}
     \tikzset{dot/.style={circle, fill, inner sep=2pt}}
     \tikzset{letters/.style={fill=none, inner sep=.5pt}}
     \tikzset{outline/.append style={circle, inner sep=2pt, minimum size=8pt, draw}}
+    \tikzset{snake/.style={decorate, decoration=snake}}
 }
 
 
