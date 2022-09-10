@@ -39,6 +39,15 @@
         \renewcommand{\wordTotalPoints}{Gesamtpunkte}
     \fi
 }
+\newcommand{\printpointsline}{}
+\DeclareOptionX{pointsbox}{
+    \renewcommand{\printpointsline}{\hfill
+        \begin{Form}
+        \wordTotalPoints: \TextField[name=points, width=20mm, align=1, bordercolor={0 0 0}]{}
+        \end{Form}
+        \vspace{\baselineskip}
+    }
+}
 
 \ExecuteOptionsX{group, course, sheet, language}
 \ProcessOptionsX
@@ -53,20 +62,13 @@
 
 \AtBeginDocument{
     \hypersetup{
-        pdftitle = {\wordAssignment{} \printsheet},
+        pdftitle = {\printcourse{} \wordAssignment{} \printsheet},
         pdfauthor = {\wordGroup{} \printgroup: \pdfmembers},
         pdfsubject = {\printcourse}
     }
     
-    \hfill
-    \begin{Form}
-    \begin{tabular}{c}
-    \\
-    \wordTotalPoints: \raisebox{-5pt}{\TextField[name=points, width=20mm, align=1, bordercolor={0 0 0}]{}} \\
-    \\
-    \end{tabular}
-    \end{Form}
-    
+    \printpointsline{}
+
     {\raggedright
     \begin{tabular}{l}
         \printcourse \\
