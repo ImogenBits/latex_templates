@@ -18,6 +18,7 @@
 
 \option{notext}
 \option{nomath}
+\option{keepvarletters}
 \optionimpliesnot{logic}{nomath}
 \option{complexity}
 \option{graphs}
@@ -46,6 +47,12 @@
     \newcommand{\impl}{\ensuremath{\rightarrow}\xspace}
     \newcommand{\restr}[2]{\ensuremath{\left.#1\right|_{#2}}}
     \newcommand{\expans}[2]{\ensuremath{\left.#1\right|^{#2}}}
+
+    \ifdefvoid{\keepvarletters}{
+        \let\ophi\phi
+        \renewcommand{\phi}{\varphi}
+        \renewcommand{\epsilon}{\varepsilon}
+    }{}
 }{}
 
 % logic symbols
@@ -109,9 +116,5 @@
 
 \RequirePackage{adjustbox}
 
-% potentially annoying
-\let\ophi\phi
-\renewcommand{\phi}{\varphi}
-\renewcommand{\epsilon}{\varepsilon}
 
 
