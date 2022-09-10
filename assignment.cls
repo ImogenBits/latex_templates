@@ -41,7 +41,8 @@
 }
 \newcommand{\printpointsline}{}
 \DeclareOptionX{pointsbox}{
-    \renewcommand{\printpointsline}{\hfill
+    \renewcommand{\printpointsline}{
+        \hfill
         \begin{Form}
         \wordTotalPoints: \TextField[name=points, width=20mm, align=1, bordercolor={0 0 0}]{}
         \end{Form}
