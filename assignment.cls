@@ -4,29 +4,12 @@
 
 \RequirePackage[hidelinks, unicode]{hyperref}
 \RequirePackage[a4paper, left=3cm, right=3cm, top=2cm, bottom=3cm]{geometry}
-\RequirePackage{xkeyval, xparse, pdftexcmds}
+\RequirePackage{xkeyval, xparse, pdftexcmds, etoolbox}
 
 
-\newcommand{\printgroup}{}
-\newcommand{\group}[1]{\renewcommand{\printgroup}{#1}}
-\define@key{assignment.cls}{group}[???]{
-  \group{#1}
-}
-
-\newcommand{\printcourse}{}
-\newcommand{\course}[1]{\renewcommand{\printcourse}{#1}}
-\define@key{assignment.cls}{course}[]{
-    \course{#1}
-}
-
-\newcommand{\printsheet}{}
-\newcommand{\sheet}[1]{\renewcommand{\printsheet}{#1}}
-\define@key{assignment.cls}{sheet}[0]{
-  \sheet{#1}
-}
-\newcommand{\wordAssignment}{Assignment Sheet}
-\newcommand{\wordGroup}{Group}
-\newcommand{\wordTotalPoints}{Total points}
+\newcommand{\wordAssignment}{}
+\newcommand{\wordGroup}{}
+\newcommand{\wordTotalPoints}{}
 \define@key{assignment.cls}{language}[english]{
     \ifnum\pdfstrcmp{#1}{english}=0
         \renewcommand{\wordAssignment}{Assignment}
@@ -39,6 +22,25 @@
         \renewcommand{\wordTotalPoints}{Gesamtpunkte}
     \fi
 }
+
+\newcommand{\printcourse}{}
+\newcommand{\course}[1]{\renewcommand{\printcourse}{#1}}
+\define@key{assignment.cls}{course}[]{
+    \course{#1}
+}
+
+\newcommand{\printgroup}{}
+\newcommand{\group}[1]{\renewcommand{\printgroup}{#1}}
+\define@key{assignment.cls}{group}[]{
+  \group{#1}
+}
+
+\newcommand{\printsheet}{}
+\newcommand{\sheet}[1]{\renewcommand{\printsheet}{#1}}
+\define@key{assignment.cls}{sheet}[]{
+  \sheet{#1}
+}
+
 \newcommand{\printpointsline}{}
 \DeclareOptionX{pointsbox}{
     \renewcommand{\printpointsline}{
@@ -72,11 +74,12 @@
 
     {\raggedright
     \begin{tabular}{l}
+        \ifdefvoid{\printcourse}{}{
         \printcourse \\
-        \ifnum \month<4 WS \else \ifnum \month>9 WS \else SS \fi \fi \the\year \\
-        \wordGroup{} \printgroup \\
+        \ifnum \month<4 WS \else \ifnum \month>9 WS \else SS \fi \fi \the\year \\}
+        \ifdefvoid{\printgroup}{}{\wordGroup{} \printgroup \\}
     \end{tabular}}
-    \hfill
+    \ifdefvoid{\printcourse}{\ifdefvoid{\printgroup}{}{\hfill}}{\hfill}
     {\Large \wordAssignment{} \printsheet}
     \hfill
     \begin{tabular}{l l}
