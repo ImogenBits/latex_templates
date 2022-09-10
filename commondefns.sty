@@ -5,18 +5,20 @@
 
 \newcommand{\option}[1]{
     \DeclareOptionX{#1}{
-        \expandafter\providecommand\csname #1\endcsname[1]{True}
+        \expandafter\providecommand\csname #1\endcsname{True}
     }
 }
-\newcommand{\optionimplies}[3][True]{
-    \DeclareOptionX{#2}{
-        \expandafter\providecommand\csname #2\endcsname[1]{True}
-        \expandafter\providecommand\csname #3\endcsname[1]{#1}
+\newcommand{\optionimpliesnot}[2]{
+    \DeclareOptionX{#1}{
+        \expandafter\providecommand\csname #1\endcsname{True}
+        \expandafter\providecommand\csname #2\endcsname{}
+        \expandafter\renewcommand\csname #2\endcsname{}
     }
 }
 
 \option{notext}
 \option{nomath}
+\optionimpliesnot{logic}{nomath}
 \ProcessOptionsX
 
 
@@ -37,8 +39,18 @@
     \newcommand{\Z}{\ensuremath{\mathbb{Z}}\xspace}
     \newcommand{\Q}{\ensuremath{\mathbb{Q}}\xspace}
 }{}
-        
-        
+
+% logic symbols
+\ifdefvoid{\logic}{}{
+    \newcommand{\A}{\ensuremath{\mathfrak A}\xspace}
+    \newcommand{\B}{\ensuremath{\mathfrak B}}
+    \newcommand{\I}{\ensuremath{\mathfrak I}}
+    \newcommand{\Th}{\ensuremath{\mathsf{Th}}}
+    \newcommand{\FO}{\ensuremath{\mathsf{FO}}}
+    \newcommand{\Mod}{\ensuremath{\mathsf{Mod}}}
+}
+
+
 \RequirePackage{adjustbox}
         
 % common pdf and graphics tools
@@ -53,12 +65,6 @@
 \tikzset{every node/.style={circle, fill=black, inner sep=2pt}}
 
 %macros
-\newcommand{\A}{\ensuremath{\mathfrak A}}
-\newcommand{\B}{\ensuremath{\mathfrak B}}
-\newcommand{\I}{\ensuremath{\mathfrak I}}
-\newcommand{\Th}{\ensuremath{\mathsf{Th}}}
-\newcommand{\FO}{\ensuremath{\mathsf{FO}}}
-\newcommand{\Mod}{\ensuremath{\mathsf{Mod}}}
 \newcommand{\xor}{\ensuremath{\oplus}}
 \newcommand{\impl}{\ensuremath{\rightarrow}}
 \newcommand{\TM}{\ensuremath{\mathrm{TM}}\xspace}
