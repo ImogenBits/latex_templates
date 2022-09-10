@@ -4,7 +4,7 @@
 
 \RequirePackage[hidelinks, unicode]{hyperref}
 \RequirePackage[a4paper, left=3cm, right=3cm, top=2cm, bottom=3cm]{geometry}
-\RequirePackage{xkeyval, xparse, pdftexcmds, etoolbox}
+\RequirePackage{xkeyval, pdftexcmds, etoolbox}
 
 
 \newcommand{\wordAssignment}{}
