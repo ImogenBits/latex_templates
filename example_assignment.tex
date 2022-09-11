@@ -41,51 +41,42 @@
     For any function $f(n) \in \Omega(\log n)$, $\cNSPACE(f(n)) = \cco\cNSPACE(f(n))$.
 
     We can also make some graphs:\\
-    \begin{adjustbox}{margin=0 5, valign=m}
-        \begin{tikzpicture}[nodes=outline]
-           \node (1) at (0, 0) {a};
-           \node (2) at (1, 0) {b};
-           \node (3) at (1.5, -1) {c};
-           \node (4) at (2, -0.5) {d};
-           \node (5) at (0.5, -1) {e};
-           \draw (1) to (2);
-           \draw (2) to (3);
-           \draw (3) to (1);
-           \draw (3) to (4);
-           \draw (5) to (1);
-           \draw (5) to (3);
-        \end{tikzpicture}
-        \end{adjustbox}
-        $\cong$
-        \begin{adjustbox}{margin=0 5, valign=m}
-        \begin{tikzpicture}[nodes=letters, nodes=red]
-           \node (1) at (0, 0) {a};
-           \node (2) at (0.5, -0.65) {b};
-           \node (3) at (1.5, -1) {c};
-           \node (4) at (2, -0.5) {d};
-           \node (5) at (0, -1) {e};
-           \draw (1) to (2);
-           \draw (2) to (3);
-           \draw (3) to (1);
-           \draw (3) to (4);
-           \draw (5) to (1);
-           \draw (5) to (3);
-        \end{tikzpicture}
-        \end{adjustbox}
-        $\cong$
-        \begin{adjustbox}{margin=0 5, valign=m}
-        \begin{tikzpicture}[nodes=dot, nodes=blue]
-            \node (1) at (0, 0) {};
-            \node (2) at (0.5, -0.65) {};
-            \node (3) at (1.5, -1) {};
-            \node (4) at (-0.25, -1.5) {};
-            \node (5) at (0, -1) {};
-            \draw (1) to (2);
-            \draw (2) to (3);
-            \draw (3) to (1);
-            \draw (3) to (4);
-            \draw (5) to (1);
-            \draw (5) to (3);
-        \end{tikzpicture}
-        \end{adjustbox}
+    \begin{tikzpicture}[nodes=outline]
+        \node (1) at (0, 0) {a};
+        \node (2) at (1, 0) {b};
+        \node (3) at (1.5, -1) {c};
+        \node (4) at (2, -0.5) {d};
+        \node (5) at (0.5, -1) {e};
+        \draw (1) to (2);
+        \draw (2) to (3);
+        \draw (3) to (1);
+        \draw (3) to (4);
+        \draw (5) to (1);
+        \draw (5) to (3);
+    \end{tikzpicture},
+    \begin{tikzpicture}[nodes=letters, nodes=red]
+        \node (1) at (0, 0) {a};
+        \node (2) at (0.5, -0.65) {b};
+        \node (3) at (1.5, -1) {c};
+        \node (4) at (2, -0.5) {d};
+        \node (5) at (0, -1) {e};
+        \draw (1) to (2);
+        \draw (2) to (3);
+        \draw (3) to (1);
+        \draw (3) to (4);
+        \draw (5) to (1);
+        \draw (5) to (3);
+    \end{tikzpicture},
+    \begin{tikzpicture}[nodes=dot, nodes=blue]
+        \node (1) at (0, 0) {};
+        \node (2) at (0.5, -0.65) {};
+        \node (3) at (1.5, -1) {};
+        \node (5) at (0, -1) {};
+        \draw (1) to (2);
+        \draw (2) to (3);
+        \draw (3) to (1);
+        \draw[snake] (3) to[bend right] (1);
+        \draw[->] (5) to (1);
+        \draw[->>] (3) to (5);
+    \end{tikzpicture}
 \end{document}
