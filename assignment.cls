@@ -83,7 +83,7 @@
         \begin{tabular}{l l}
             \fmtmembers
         \end{tabular}
-    }}
+    }\par}
 
     \hrule
     \vspace{\baselineskip}
