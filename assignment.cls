@@ -10,7 +10,7 @@
 \newcommand{\wordAssignment}{}
 \newcommand{\wordGroup}{}
 \newcommand{\wordTotalPoints}{}
-\define@key{assignment.cls}{language}[english]{
+\DeclareOptionX{language}[english]{
     \ifnum\pdfstrcmp{#1}{english}=0
         \renewcommand{\wordAssignment}{Assignment}
         \renewcommand{\wordGroup}{Group}
@@ -25,19 +25,19 @@
 
 \newcommand{\printcourse}{}
 \newcommand{\course}[1]{\renewcommand{\printcourse}{#1}}
-\define@key{assignment.cls}{course}[]{
+\DeclareOptionX{course}[]{
     \course{#1}
 }
 
 \newcommand{\printgroup}{}
 \newcommand{\group}[1]{\renewcommand{\printgroup}{#1}}
-\define@key{assignment.cls}{group}[]{
+\DeclareOptionX{group}[]{
   \group{#1}
 }
 
 \newcommand{\printsheet}{}
 \newcommand{\sheet}[1]{\renewcommand{\printsheet}{#1}}
-\define@key{assignment.cls}{sheet}[]{
+\DeclareOptionX{sheet}[]{
   \sheet{#1}
 }
 
