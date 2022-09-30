@@ -27,7 +27,8 @@
 % some commonly disliked variable letter renderings, if you want to keep the default ones you can pass 'keepvarletters'.
 % the option 'graphs' imports tikz, commonly used libraries, and defines generally useful styles.
 % 'logic', 'complexity' contain macros that are useful when working in the respective fields.
-\usepackage[logic, complexity, graphs]{commondefns}
+% 'rwthcolors' contains color defns for the specific shades used by the rwth
+\usepackage[logic, complexity, graphs, rwthcolors]{commondefns}
 
 \begin{document}
     This is our Assignment!
@@ -55,7 +56,7 @@
         \draw (5) to (1);
         \draw (5) to (3);
     \end{tikzpicture},
-    \begin{tikzpicture}[nodes=letters, nodes=red]
+    \begin{tikzpicture}[nodes=letters, nodes=rwth-magenta]
         \node (1) at (0, 0) {a};
         \node (2) at (0.5, -0.65) {b};
         \node (3) at (1.5, -1) {c};
@@ -68,7 +69,7 @@
         \draw (5) to (1);
         \draw (5) to (3);
     \end{tikzpicture},
-    \begin{tikzpicture}[nodes=dot, nodes=blue]
+    \begin{tikzpicture}[nodes=dot, nodes=rwth-blue]
         \node (1) at (0, 0) {};
         \node (2) at (0.5, -0.65) {};
         \node (3) at (1.5, -1) {};
