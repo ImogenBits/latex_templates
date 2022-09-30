@@ -2,7 +2,6 @@
 \ProvidesClass{assignment}[2022/09/10 Assignment sheet class]
 \LoadClass[a4paper,11pt]{article}
 
-\RequirePackage[hidelinks, unicode]{hyperref}
 \RequirePackage[a4paper, left=2cm, right=4.5cm, top=2cm, bottom=2cm]{geometry}
 \RequirePackage{xkeyval, pdftexcmds, etoolbox}
 
