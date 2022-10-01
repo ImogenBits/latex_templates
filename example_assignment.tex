@@ -18,7 +18,7 @@
 % you can turn them off with 'notext' and/or 'nomath'. when using the math parts, it will change the definitions of
 % some commonly disliked variable letter renderings, if you want to keep the default ones you can pass 'keepvarletters'.
 % the option 'graphs' imports tikz, commonly used libraries, and defines generally useful styles.
-% 'logic', 'complexity' contain macros that are useful when working in the respective fields.
+% 'logic' and 'complexity' contain macros that are useful when working in the respective fields.
 % 'rwthcolors' contains color defns for the specific shades used by the rwth
 \usepackage[logic, complexity, graphs, rwthcolors]{commondefns}
 
@@ -32,7 +32,7 @@
 
     And the same is true for complexity classes:\\
     For any function $f(n) \in \Omega(\log n)$,\\
-    $\N\SPACE(f(n)) = \co\N\SPACE(f(n))$ and $\N\SPACE(f(n)) \subseteq \SPACE(f(n)^2)$.
+    $\NSPACE(f(n)) = \co\NSPACE(f(n))$ and $\NSPACE(f(n)) \subseteq \SPACE(f(n)^2)$.
 
     We can also make some graphs:\\
     \begin{tikzpicture}[nodes=outline]
