@@ -28,6 +28,7 @@
 
 % general text layout improvements
 \ifdefvoid{\notext}{
+    \RequirePackage[dvipsnames]{xcolor}         % better color names
     \RequirePackage[T1]{fontenc}                % better font encoding
     \RequirePackage{lmodern}                    % font with better glyphs
     \RequirePackage[ngerman, english]{babel}    % better hypenations
@@ -37,7 +38,22 @@
     \RequirePackage{adjustbox}                  % control box placement
     \RequirePackage{multicol}                   % better column env
     \RequirePackage{booktabs}                   % better tables
-    \RequirePackage[hidelinks, unicode]{hyperref}
+    \RequirePackage{hyperref}                   % pdf metadata and links
+    \hypersetup{
+        unicode,                                % use unicode encoding
+        colorlinks,                             % highlight links via color, not boxes
+        linkcolor=NavyBlue,                     % safe links are blue
+        citecolor=NavyBlue,
+        urlcolor=NavyBlue,
+        filecolor=BrickRed,                     % unsafe links are red
+        menucolor=BrickRed,
+        runcolor=BrickRed,
+        pdfstartview=,                          % default zoom is the pdf reader's user setting
+        bookmarksopen=true,                     % open bookmarks
+        bookmarksnumbered=true,                 % include section numbers in bookmarks
+        plainpages=false,                       % keep non arabic page numbers as references
+        hypertexnames=false,                    % use better link numbering
+    }
     \renewcommand{\labelenumi}{(\roman{enumi})}
 }{}
 
@@ -112,7 +128,6 @@
 
 % rwth colors
 \ifdefvoid{\rwthcolors}{}{
-    \RequirePackage{color}
     \definecolor{rwth-blue}{cmyk}{1,.5,0,0}
         \colorlet{rwth-lblue}{rwth-blue!50}
         \colorlet{rwth-llblue}{rwth-blue!25}

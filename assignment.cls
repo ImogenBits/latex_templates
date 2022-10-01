@@ -89,10 +89,12 @@
 }
 
 \AtBeginDocument{
-    \hypersetup{
-        pdftitle = {\printcourse{} \wordAssignment{} \printsheet},
-        pdfauthor = {\wordGroup{} \printgroup: \pdfmembers},
-        pdfsubject = {\printcourse}
+    \@ifpackageloaded{hyperref}{
+        \hypersetup{
+            pdftitle = {\printcourse{} \wordAssignment{} \printsheet},
+            pdfauthor = {\wordGroup{} \printgroup: \pdfmembers},
+            pdfsubject = {\printcourse}
+        }
     }
     \printpointsline
     \maketitle    
