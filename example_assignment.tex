@@ -1,19 +1,11 @@
-\documentclass[group=123, sheet=1]{assignment}
-\course{Boring Math}
-% the course, group, and sheet can all be specified via either documentclass options or their slash commands.
-% when using the documentclass options, latex strips all spaces so sometimes you have to use the slash commands.
-% e.g. the above invokation is equivalent to:
-% \documentclass{assignment}
-% \group{123}
-% \sheet{1}
-% \course{Boring Math}
-%
-% but this will lead to the course being displayed as "BoringMath":
-% \documentclass[group=123, sheet=1, course=Boring Math]{assignment}
-%
-% you can also specify the 'language=german' or 'language=english' option (defaults to english).
+\documentclass{assignment}
+% by default the header is printed in english, the 'german' option will switch it to german.
 % adding the 'pointsbox' option will include a text field where your TA can enter your point total.
-% all of the info fields are optional, a minimal use is just '\documentclass{assignment}' with no other commands.
+
+% course name, group number, and sheet number can optionally be specified with the respective commands
+\course{Boring Math}
+\group{123}
+\sheet{1}
 
 % group members are added via the \member{full name}{matriculation number} command
 \member{Ada Lovelace}{486921}

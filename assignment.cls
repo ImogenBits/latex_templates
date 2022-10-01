@@ -6,38 +6,13 @@
 \RequirePackage{xkeyval, pdftexcmds, etoolbox}
 
 
-\newcommand{\wordAssignment}{}
-\newcommand{\wordGroup}{}
-\newcommand{\wordTotalPoints}{}
-\DeclareOptionX{language}[english]{
-    \ifnum\pdfstrcmp{#1}{english}=0
-        \renewcommand{\wordAssignment}{Assignment}
-        \renewcommand{\wordGroup}{Group}
-        \renewcommand{\wordTotalPoints}{Total points}
-    \fi
-    \ifnum\pdfstrcmp{#1}{german}=0
-        \renewcommand{\wordAssignment}{Übung}
-        \renewcommand{\wordGroup}{Gruppe}
-        \renewcommand{\wordTotalPoints}{Gesamtpunkte}
-    \fi
-}
-
-\newcommand{\printcourse}{}
-\newcommand{\course}[1]{\renewcommand{\printcourse}{#1}}
-\DeclareOptionX{course}[]{
-    \course{#1}
-}
-
-\newcommand{\printgroup}{}
-\newcommand{\group}[1]{\renewcommand{\printgroup}{#1}}
-\DeclareOptionX{group}[]{
-  \group{#1}
-}
-
-\newcommand{\printsheet}{}
-\newcommand{\sheet}[1]{\renewcommand{\printsheet}{#1}}
-\DeclareOptionX{sheet}[]{
-  \sheet{#1}
+\newcommand{\wordAssignment}{Assignment}
+\newcommand{\wordGroup}{Group}
+\newcommand{\wordTotalPoints}{Total points}
+\DeclareOptionX{german}{
+    \renewcommand{\wordAssignment}{Übung}
+    \renewcommand{\wordGroup}{Gruppe}
+    \renewcommand{\wordTotalPoints}{Gesamtpunkte}
 }
 
 \newcommand{\printpointsline}{}
@@ -51,8 +26,16 @@
     }
 }
 
-\ExecuteOptionsX{group, course, sheet, language}
 \ProcessOptionsX
+
+\newcommand{\printcourse}{}
+\newcommand{\course}[1]{\renewcommand{\printcourse}{#1}}
+
+\newcommand{\printgroup}{}
+\newcommand{\group}[1]{\renewcommand{\printgroup}{#1}}
+
+\newcommand{\printsheet}{}
+\newcommand{\sheet}[1]{\renewcommand{\printsheet}{#1}}
 
 \newcommand{\pdfmembers}{}
 \newcommand{\fmtmembers}{}
@@ -96,6 +79,7 @@
             pdfsubject = {\printcourse}
         }
     }
+
     \printpointsline
     \maketitle    
 }
