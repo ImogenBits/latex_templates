@@ -34,8 +34,8 @@
 \newcommand{\printgroup}{}
 \newcommand{\group}[1]{\renewcommand{\printgroup}{#1}}
 
-\newcommand{\printsheet}{}
-\newcommand{\sheet}[1]{\renewcommand{\printsheet}{#1}}
+\newcommand{\printassignment}{}
+\newcommand{\assignment}[1]{\renewcommand{\printassignment}{#1}}
 
 \newcommand{\pdfmembers}{}
 \newcommand{\fmtmembers}{}
@@ -58,7 +58,7 @@
     \end{tabular}}
     %
     \ifdefvoid{\printcourse}{\ifdefvoid{\printgroup}{}{\hfill}}{\hfill}
-    {\Large \wordAssignment{} \printsheet}
+    {\Large \wordAssignment{} \printassignment}
     %
     \ifdefvoid{\fmtmembers}{}{
         \hfill
@@ -74,7 +74,7 @@
 \AtBeginDocument{
     \@ifpackageloaded{hyperref}{
         \hypersetup{
-            pdftitle = {\printcourse{} \wordAssignment{} \printsheet},
+            pdftitle = {\printcourse{} \wordAssignment{} \printassignment},
             pdfauthor = {\wordGroup{} \printgroup: \pdfmembers},
             pdfsubject = {\printcourse}
         }
