@@ -5,6 +5,8 @@
 \RequirePackage[a4paper, left=2cm, right=4.5cm, top=2cm, bottom=2cm]{geometry}
 \RequirePackage{xkeyval, pdftexcmds, etoolbox}
 
+\renewcommand{\thesubsection}{\alph{subsection})}
+\renewcommand{\thesubsubsection}{\roman{subsubsection})}
 
 \newcommand{\wordAssignment}{Assignment}
 \newcommand{\wordGroup}{Group}
