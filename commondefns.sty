@@ -93,6 +93,8 @@
 % complexity classes
 \ifdefvoid{\complexity}{}{
     \newcommand{\bigO}{\ensuremath{\mathcal{O}}}
+    \newcommand{\problem}[1]{\ensuremath{\mathsc{#1}}}
+    \newcommand{\cclass}[1]{\ensuremath{\mathsf{#1}}}
 
     \newcommand{\TM}{\ensuremath{\mathrm{TM}}\xspace}
     \newcommand{\DTM}{\ensuremath{\mathrm{DTM}}\xspace}
@@ -101,8 +103,10 @@
     \newcommand{\ATM}{\ensuremath{\mathrm{ATM}}\xspace}
     \newcommand{\DBA}{\ensuremath{\mathrm{DBA}}\xspace}
     \newcommand{\NBA}{\ensuremath{\mathrm{NBA}}\xspace}
+    \newcommand{\GNBA}{\ensuremath{\mathrm{GNBA}}\xspace}
 
     \newcommand{\co}{\ensuremath{\mathsf{co-}}}
+    \newcommand{\re}{\ensuremath{\mathsf{r.e.}}\xspace}
     \newcommand{\TIME}{\ensuremath{\mathsf{TIME}}\xspace}
     \newcommand{\NTIME}{\ensuremath{\mathsf{NTIME}}\xspace}
     \newcommand{\DTIME}{\ensuremath{\mathsf{DTIME}}\xspace}
@@ -134,7 +138,7 @@
     \tikzset{letters/.style={fill=none, inner sep=.5pt}}
     \tikzset{outline/.style={circle, inner sep=1.5pt, minimum size=12pt, draw}}
     \tikzset{snake/.style={decorate, decoration=snake}}
-    \tikzset{automaton/.style={on grid, auto, initial text={}, node distance=2cm}}
+    \tikzset{automaton/.style={on grid, auto, initial text={}, node distance=3cm}}
 }
 
 % rwth colors
