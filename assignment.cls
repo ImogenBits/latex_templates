@@ -4,18 +4,26 @@
 
 \RequirePackage[a4paper, left=2cm, right=4.5cm, top=2cm, bottom=2cm]{geometry}
 \RequirePackage{xkeyval, pdftexcmds, etoolbox}
+\RequirePackage[skip=2\baselineskip]{parskip}
+\RequirePackage{titlesec}
 
-\renewcommand{\thesubsection}{\alph{subsection})}
-\renewcommand{\thesubsubsection}{\roman{subsubsection})}
 
 \newcommand{\wordAssignment}{Assignment}
 \newcommand{\wordGroup}{Group}
 \newcommand{\wordTotalPoints}{Total points}
+\newcommand{\wordExercise}{Exercise}
 \DeclareOptionX{german}{
     \renewcommand{\wordAssignment}{Übung}
     \renewcommand{\wordGroup}{Gruppe}
     \renewcommand{\wordTotalPoints}{Gesamtpunkte}
+    \newcommand{\wordExercise}{Aufgabe}
 }
+
+\renewcommand{\thesection}{\wordExercise{} \arabic{section}}
+\renewcommand{\thesubsection}{\alph{subsection})}
+\renewcommand{\thesubsubsection}{\roman{subsubsection})}
+\titleformat{\subsection}[runin]{}{\thesubsection}{1em}{}[]
+\titleformat{\subsubsection}[runin]{}{\thesubsubsection}{1em}{}[]
 
 \newcommand{\printpointsline}{}
 \DeclareOptionX{pointsbox}{
