@@ -16,7 +16,7 @@
     \renewcommand{\wordAssignment}{Übung}
     \renewcommand{\wordGroup}{Gruppe}
     \renewcommand{\wordTotalPoints}{Gesamtpunkte}
-    \newcommand{\wordExercise}{Aufgabe}
+    \renewcommand{\wordExercise}{Aufgabe}
 }
 
 \renewcommand{\thesection}{\wordExercise{} \arabic{section}}

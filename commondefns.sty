@@ -22,6 +22,7 @@
 \option{complexity}
 \option{graphs}
 \option{rwthcolors}
+\option{theorems}
 \ProcessOptionsX
 \let\option\undefined
 
@@ -32,13 +33,14 @@
     \RequirePackage[T1]{fontenc}                % better font encoding
     \RequirePackage{lmodern}                    % font with better glyphs
     \RequirePackage[ngerman, english]{babel}    % better hypenations
-    \RequirePackage{parskip, microtype}         % general layout and rendering
+    \RequirePackage{microtype}                  % general layout and rendering
     \RequirePackage{graphicx}                   % actually usable graphics
     \RequirePackage{pdfpages}                   % include pdfs
     \RequirePackage{adjustbox}                  % control box placement
     \RequirePackage{multicol}                   % better column env
     \RequirePackage{booktabs}                   % better tables
     \RequirePackage{hyperref}                   % pdf metadata and links
+    \RequirePackage{parskip}                    % par breaks via empty line, not indent
     \hypersetup{
         unicode,                                % use unicode encoding
         colorlinks,                             % highlight links via color, not boxes
@@ -53,30 +55,35 @@
         plainpages=false,                       % keep non arabic page numbers as references
         hypertexnames=false,                    % use better link numbering
     }
-    \renewcommand{\labelenumi}{(\roman{enumi})}
 }{}
 
 % math symbols
 \ifdefvoid{\nomath}{
-    \RequirePackage{amsmath, amssymb, mathtools, stmaryrd}
-    \newcommand{\mathsc}[1]{\text{\textsc{#1}}}
+    \RequirePackage{amsmath, amsthm, amssymb, mathtools, stmaryrd}
+    \newcommand{\mathsc}[1]{\textnormal{\textsc{#1}}}
     \newcommand{\RR}{\ensuremath{\mathbb{R}}\xspace}
     \newcommand{\NN}{\ensuremath{\mathbb{N}}\xspace}
     \newcommand{\ZZ}{\ensuremath{\mathbb{Z}}\xspace}
     \newcommand{\QQ}{\ensuremath{\mathbb{Q}}\xspace}
     \newcommand{\BB}{\ensuremath{\mathbb{B}}\xspace}
+    \newcommand{\KK}{\ensuremath{\mathbb{K}}\xspace}
+    \newcommand{\FF}{\ensuremath{\mathbb{F}}\xspace}
     \newcommand{\xor}{\ensuremath{\oplus}\xspace}
     \newcommand{\impl}{\ensuremath{\rightarrow}\xspace}
     \newcommand{\restr}[2]{\ensuremath{\left.#1\right|_{#2}}}
     \newcommand{\expans}[2]{\ensuremath{\left.#1\right|^{#2}}}
-    \newtheorem{theorem}{Theorem}
-    \newcommand{\qed}{\hfill \ensuremath{\square}}
+
+    \renewcommand{\qedsymbol}{\square}
+    \renewcommand{\qed}{\hfill \ensuremath{\square}}
     \newcommand{\contradiction}{\hfill \ensuremath{\lightning}}
     \newcommand{\toiso}{\xrightarrow{\sim}}
     \newcommand{\tomono}{\xhookrightarrow{}}
     \newcommand{\toepi}{\twoheadrightarrow}
-    \newcommand{\Ima}{\operatorname{Im}}
-    \newcommand{\dom}{\operatorname{dom}}
+    \DeclareMathOperator{\Ima}{Im}
+    \DeclareMathOperator{\Ker}{Ker}
+    \DeclareMathOperator{\dom}{dom}
+    \DeclareMathOperator{\id}{id}
+    \DeclareMathOperator{\queq}{\overset{?}{=}}
 
     \ifdefvoid{\keepvarletters}{
         \let\ophi\phi
@@ -84,6 +91,20 @@
         \renewcommand{\epsilon}{\varepsilon}
     }{}
 }{}
+
+% theorem styles
+\ifdefvoid{\theorems}{}{
+    \theoremstyle{definition}
+    \newtheorem{theorem}{Theorem}[section]
+    \theoremstyle{definition}
+    \newtheorem{corollary}[theorem]{Corollary}
+    \theoremstyle{definition}
+    \newtheorem{definition}[theorem]{Definition}
+    \theoremstyle{definition}
+    \newtheorem{lemma}[theorem]{Lemma}
+    \theoremstyle{definition}
+    \newtheorem*{remark}{Remark}
+}
 
 % logic symbols
 \ifdefvoid{\logic}{}{
@@ -93,16 +114,16 @@
     \newcommand{\Th}{\ensuremath{\mathsf{Th}}\xspace}
     \newcommand{\FO}{\ensuremath{\mathsf{FO}}\xspace}
     \newcommand{\Mod}{\ensuremath{\mathsf{Mod}}\xspace}
-    \newcommand{\G}{\ensuremath{\mathcal G}}    % can cause problems with older TeX live versions
-    \newcommand{\K}{\ensuremath{\mathcal K}}
-    \newcommand{\yields}{\ensuremath{\vdash}}
+    \newcommand{\G}{\ensuremath{\mathcal G}\xspace}    % can cause problems with older TeX live versions
+    \newcommand{\K}{\ensuremath{\mathcal K}\xspace}
+    \newcommand{\yields}{\ensuremath{\vdash}\xspace}
+    \newcommand{\lfp}[2]{\left[\mathrm{lfp}\; #1\;.\; #2\right]}
+    \newcommand{\gfp}[2]{\left[\mathrm{gfp}\; #1\;.\; #2\right]}
 }
 
 % complexity classes
 \ifdefvoid{\complexity}{}{
     \newcommand{\bigO}{\ensuremath{\mathcal{O}}}
-    \newcommand{\problem}[1]{\ensuremath{\mathsc{#1}}}
-    \newcommand{\cclass}[1]{\ensuremath{\mathsf{#1}}}
 
     \newcommand{\TM}{\ensuremath{\mathrm{TM}}\xspace}
     \newcommand{\DTM}{\ensuremath{\mathrm{DTM}}\xspace}
@@ -113,7 +134,7 @@
     \newcommand{\NBA}{\ensuremath{\mathrm{NBA}}\xspace}
     \newcommand{\GNBA}{\ensuremath{\mathrm{GNBA}}\xspace}
 
-    \newcommand{\co}{\ensuremath{\mathsf{co-}}}
+    \newcommand{\co}{\ensuremath{\mathsf{co}}}
     \newcommand{\re}{\ensuremath{\mathsf{r.e.}}\xspace}
     \newcommand{\TIME}{\ensuremath{\mathsf{TIME}}\xspace}
     \newcommand{\NTIME}{\ensuremath{\mathsf{NTIME}}\xspace}
