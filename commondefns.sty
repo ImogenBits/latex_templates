@@ -60,6 +60,7 @@
 % math symbols
 \ifdefvoid{\nomath}{
     \RequirePackage{amsmath, amsthm, amssymb, mathtools, stmaryrd}
+    \RequirePackage[nameinlink, capitalize]{cleveref}
     \newcommand{\mathsc}[1]{\textnormal{\textsc{#1}}}
     \newcommand{\RR}{\ensuremath{\mathbb{R}}\xspace}
     \newcommand{\NN}{\ensuremath{\mathbb{N}}\xspace}
@@ -76,6 +77,7 @@
     \renewcommand{\qedsymbol}{\square}
     \renewcommand{\qed}{\hfill \ensuremath{\square}}
     \newcommand{\contradiction}{\hfill \ensuremath{\lightning}}
+    \newcommand{\from}{\colon}
     \newcommand{\toiso}{\xrightarrow{\sim}}
     \newcommand{\tomono}{\xhookrightarrow{}}
     \newcommand{\toepi}{\twoheadrightarrow}
@@ -97,6 +99,8 @@
     \theoremstyle{definition}
     \newtheorem{theorem}{Theorem}[section]
     \theoremstyle{definition}
+    \newtheorem{proposition}[theorem]{Proposition}
+    \theoremstyle{definition}
     \newtheorem{corollary}[theorem]{Corollary}
     \theoremstyle{definition}
     \newtheorem{definition}[theorem]{Definition}
@@ -104,6 +108,9 @@
     \newtheorem{lemma}[theorem]{Lemma}
     \theoremstyle{definition}
     \newtheorem*{remark}{Remark}
+
+    \newenvironment{proofsketch}{%
+    \renewcommand{\proofname}{Proof Sketch}\proof}{\endproof}
 }
 
 % logic symbols
