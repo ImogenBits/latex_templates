@@ -2,21 +2,24 @@
 \ProvidesClass{assignment}[2022/09/10 Assignment sheet class]
 \LoadClass[a4paper,11pt]{article}
 
-\RequirePackage[a4paper, left=2cm, right=4.5cm, top=2cm, bottom=2cm]{geometry}
+\RequirePackage[a4paper, left=2.5cm, right=2.5cm, top=2cm, bottom=2cm]{geometry}
 \RequirePackage{xkeyval, pdftexcmds, etoolbox}
 \RequirePackage[skip=2\baselineskip]{parskip}
 \RequirePackage{titlesec}
+\RequirePackage[dvipsnames]{xcolor}
 
 
 \newcommand{\wordAssignment}{Assignment}
 \newcommand{\wordGroup}{Group}
 \newcommand{\wordTotalPoints}{Total points}
 \newcommand{\wordExercise}{Exercise}
+\newcommand{\wordNote}{Note}
 \DeclareOptionX{german}{
     \renewcommand{\wordAssignment}{Übung}
     \renewcommand{\wordGroup}{Gruppe}
     \renewcommand{\wordTotalPoints}{Gesamtpunkte}
     \renewcommand{\wordExercise}{Aufgabe}
+    \renewcommand{\wordNote}{Anmerkung}
 }
 
 \renewcommand{\thesection}{\wordExercise{} \arabic{section}}
@@ -94,4 +97,4 @@
     \maketitle    
 }
 
-
+\newenvironment{note}{\color{gray}\subsection*{\wordNote:}}{}
