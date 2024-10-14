@@ -96,17 +96,22 @@
 
 % theorem styles
 \ifdefvoid{\theorems}{}{
-    \theoremstyle{definition}
+    \newtheoremstyle{break}
+        {}{}%
+        {\itshape}{}%
+        {\bfseries}{}%
+        {\newline}{}%
+    \theoremstyle{break}
     \newtheorem{theorem}{Theorem}[section]
-    \theoremstyle{definition}
+    \theoremstyle{break}
     \newtheorem{proposition}[theorem]{Proposition}
-    \theoremstyle{definition}
+    \theoremstyle{break}
     \newtheorem{corollary}[theorem]{Corollary}
-    \theoremstyle{definition}
+    \theoremstyle{break}
     \newtheorem{definition}[theorem]{Definition}
-    \theoremstyle{definition}
+    \theoremstyle{break}
     \newtheorem{lemma}[theorem]{Lemma}
-    \theoremstyle{definition}
+    \theoremstyle{break}
     \newtheorem*{remark}{Remark}
 
     \newenvironment{proofsketch}{%
